@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: seiodck
+  name: grefsgr
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: seiodck
+      app: grefsgr
   template:
     metadata:
       labels:
-        app: seiodck
+        app: grefsgr
     spec:
       containers:
-      - image: okteto.dev/seiodck:latest
-        name: seiodck
+      - image: okteto.dev/grefsgr:latest
+        name: grefsgr
         ports:
         - containerPort: 8080
         env:
@@ -23,12 +23,12 @@ spec:
         - name: ProxySite
           value: "mirror.umd.edu"
         - name: Vless_UUID
-          value: "e3682dbe-21c3-49e0-8a93-0e66010a6d7e"
+          value: "39ab83b0-8528-4454-8ebe-677861511d80"
         - name: Vless_Path
-          value: "/e3682dbe-21c3-49e0-8a93-0e66010a6d7e-vless"
+          value: "/39ab83b0-8528-4454-8ebe-677861511d80-vless"
         - name: Vmess_UUID
-          value: "e3682dbe-21c3-49e0-8a93-0e66010a6d7e"
+          value: "39ab83b0-8528-4454-8ebe-677861511d80"
         - name: Vmess_Path
-          value: "/4cc6f83d-3b71-4d66-be9f-80aedb19e8a2-vmess"
+          value: "/39ab83b0-8528-4454-8ebe-677861511d80-vmess"
         - name: Share_Path
           value: "$Share_Path"
